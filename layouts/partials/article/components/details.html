@@ -51,6 +51,11 @@
                 </time>
             </div>
         {{ end }}
+
+        <div>
+            {{ partial "helper/icon" "read" }}
+            <span id="{{ .RelPermalink }}" class="waline-visitor-count" ></span>&nbsp;visitors
+        </div>
     </footer>
     {{ end }}
 </div>
