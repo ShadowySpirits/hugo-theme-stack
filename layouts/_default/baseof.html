@@ -17,4 +17,13 @@
         </div>
         {{ partial "footer/include.html" . }}
     </body>
+    <script>
+        if(!window.location.pathname.startsWith('/p/')) {
+            var x = document.getElementById('visitor-count');
+            while(x != null) {
+                x.remove();
+                x = document.getElementById('visitor-count');
+            }
+        }
+    </script>
 </html>

@@ -52,9 +52,9 @@
             </div>
         {{ end }}
 
-        <div>
+        <div id="visitor-count">
             {{ partial "helper/icon" "read" }}
-            <span id="{{ .RelPermalink }}" class="waline-visitor-count" ></span>&nbsp;visitors
+            <span id="{{ $url }}" class="waline-visitor-count" ></span>&nbsp;visitors
         </div>
     </footer>
     {{ end }}
