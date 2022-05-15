@@ -1,6 +1,12 @@
-{{- partial "helper/external" (dict "Context" . "Namespace" "Vibrant") -}}
-
-{{- $opts := dict "minify" hugo.IsProduction -}}
-{{- $script := resources.Get "ts/main.ts" | js.Build $opts -}}
+{{- partial "helper/external" (dict "Context" . "Namespace" "Vibrant") -}} {{-
+$opts := dict "minify" hugo.IsProduction -}} {{- $script := resources.Get
+"ts/main.ts" | js.Build $opts -}}
 
 <script type="text/javascript" src="{{ $script.RelPermalink }}" defer></script>
+
+{{ if .Page.Store.Get "hasMermaid" }}
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({ theme: document.documentElement.dataset.scheme === 'dark' ? 'dark' : 'default', startOnLoad: true });
+</script>
+{{ end }}

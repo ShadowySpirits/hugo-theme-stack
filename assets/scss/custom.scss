@@ -21,3 +21,17 @@
 //         display: none;
 //     }
 // }
+
+
+[data-scheme=light] {
+    g rect {
+        fill: #afe0f8!important;
+        stroke: black!important;
+    }
+    g line {
+        stroke: black!important;
+    }
+    g span .edgeLabel {
+        background: white!important;
+    }
+}
