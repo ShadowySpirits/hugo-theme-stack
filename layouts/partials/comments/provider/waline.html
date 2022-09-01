@@ -1,4 +1,4 @@
-<script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<script async defer src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
 <div id="waline" class="waline-container"></div>
 <style>
     .waline-container {
@@ -19,15 +19,17 @@
 {{- with .Site.Params.comments.waline -}}
 <script>
     /// Waline client configuration see: https://waline.js.org/en/reference/client.html
-    new Waline({
-        el: '#waline',
-        dark: 'html[data-scheme="dark"]',
-        serverURL: 'https://comment.lv5.moe',
-        visitor: true,
-        copyright: false,
-        avatar: 'retro',
-        emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq', 'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji'],
-        requiredMeta: ['nick', 'mail']
+    addLoadEvent(function(){
+        new Waline({
+            el: '#waline',
+            dark: 'html[data-scheme="dark"]',
+            serverURL: 'https://comment.lv5.moe',
+            visitor: true,
+            copyright: false,
+            avatar: 'retro',
+            emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq', 'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji'],
+            requiredMeta: ['nick', 'mail']
+        });
     });
 </script>
 {{- end -}}

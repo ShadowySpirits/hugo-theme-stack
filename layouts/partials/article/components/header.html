@@ -26,7 +26,7 @@
                         {{ with $Srcset }}srcset="{{ . }}"{{ end }}
                         width="{{ $Width }}" 
                         height="{{ $Height }}" 
-                        loading="lazy"
+                        loading="{{.Page.Store.Get "imageLoading"}}"
                         alt="Featured image of post {{ .Title }}" />
                 {{ else }}
                     <img src="{{ $image.permalink }}" loading="lazy" alt="Featured image of post {{ .Title }}" />

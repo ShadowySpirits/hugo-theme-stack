@@ -1,4 +1,5 @@
 {{ $image := partialCached "helper/image" (dict "Context" . "Type" "articleList") .RelPermalink "articleList" }}
 <article class="{{ if $image.exists }}has-image{{ end }}">
+    {{ .Page.Store.Set "imageLoading" "lazy" }}
     {{ partial "article/components/header" . }}
 </article>

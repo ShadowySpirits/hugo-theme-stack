@@ -5,8 +5,13 @@ $opts := dict "minify" hugo.IsProduction -}} {{- $script := resources.Get
 <script type="text/javascript" src="{{ $script.RelPermalink }}" defer></script>
 
 {{ if .Page.Store.Get "hasMermaid" }}
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script async defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>
-mermaid.initialize({ theme: document.documentElement.dataset.scheme === 'dark' ? 'dark' : 'default', startOnLoad: true });
+  addLoadEvent(function () {
+    mermaid.initialize({
+      theme:document.documentElement.dataset.scheme === "dark" ? "dark" : "default",
+      startOnLoad: true,
+    });
+  })
 </script>
 {{ end }}

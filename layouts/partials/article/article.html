@@ -1,4 +1,5 @@
 <article class="{{ if .Params.image }}has-image {{ end }}main-article">
+    {{ .Page.Store.Set "imageLoading" "eager" }}
     {{ partial "article/components/header" . }}
 
     {{ partial "article/components/content" . }}
